@@ -28,35 +28,60 @@
         </v-col>
       </v-row>
     </v-container>
+    <v-row>
+      <v-col align-self="center" cols="12">
+        <v-container>
+          <v-card flat>
+            <v-card-title class="headline justify-center">And there is so much more...</v-card-title>
+            <v-card-subtitle
+              class="text-center"
+            >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, tempore?</v-card-subtitle>
+            <v-card-text
+              class="text-center"
+            >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam tenetur eligendi assumenda vero consequatur! Tempora libero commodi molestiae perferendis ut laborum. Repellendus maiores assumenda quia! Dolorum quasi earum odio est vel, quae aperiam harum a ipsum quisquam placeat, officiis voluptatibus?</v-card-text>
+            <v-card-actions class="justify-center">
+              <v-btn>
+                <v-icon left>mdi-speedometer</v-icon>Get Started
+              </v-btn>
+              <v-btn outlined>
+                <v-icon left>mdi-github-circle</v-icon>Github
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-container>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
+import uuidv1 from "uuid/v1";
+
 export default {
   name: "Testimonial",
   data() {
     return {
       comments: [
         {
-          id: "1",
+          id: uuidv1(),
           author: "Andrea Palladio",
           comment: "I never knew web design like this was possible.",
-          image: require("../assets/palladio.jpg"),
+          image: require("../assets/persons/palladio.jpg"),
           gradient: false
         },
         {
-          id: "2",
+          id: uuidv1(),
           author: "Leon Battista Alberti",
           comment: "Never before have I seen such sites.",
-          image: require("../assets/alberti.jpg")
+          image: require("../assets/persons/alberti.jpg")
           //         gradient: "to right, rgba(0,255,0,.05), rgba(0,255,0, .05)"
         },
         {
-          id: "3",
+          id: uuidv1(),
           author: "Le Corbusier",
           comment:
             "When one sees such web pages, what can one say but ... LS designs...",
-          image: require("../assets/Le-Corbu.jpg")
+          image: require("../assets/persons/Le-Corbu.jpg")
           //          gradient: "to right, rgba(0,0,255,.05), rgba(0,0,255, .05)"
         }
       ]

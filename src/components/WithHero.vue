@@ -17,6 +17,7 @@
 
 <script>
 // @ is an alias to /src
+import uuidv1 from "uuid/v1";
 
 export default {
   name: "WithHero",
@@ -26,14 +27,14 @@ export default {
       colsize: "4",
       blocks: [
         {
-          id: "2",
+          id: uuidv1(),
           switch: true,
           title: "There is no escape.",
           subtitle:
             "Don't make me destroy you. Luke, you do not yet realize your importance. You have only begun to discover your power. Join me, and I will complete your training. With our combined strength, we can end this destructive conflict and bring order to the galaxy."
         },
         {
-          id: "3",
+          id: uuidv1(),
           switch: false,
           title: "If you only knew...",
           subtitle:
@@ -61,10 +62,11 @@ export default {
   right: 0;
   opacity: 1;
   z-index: -2;
-  background: url("../assets/willian-west-YpKiwlvhOpI-unsplash.jpg") no-repeat
-    center center;
+  background: url("../assets/roman/willian-west-YpKiwlvhOpI-unsplash.jpg")
+    no-repeat center center;
   background-size: cover;
 }
+
 .home::after {
   content: "";
   display: block;

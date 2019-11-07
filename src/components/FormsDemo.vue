@@ -1,34 +1,68 @@
 <template>
   <div>
     <v-container>
-      <v-card outlined>
-        <v-form v-model="valid">
+      <v-card outlined class="mx-auto" max-width="500">
+        <v-toolbar flat>
+          <v-toolbar-title>
+            <v-icon left>mdi-account</v-icon>User Login
+          </v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-toolbar-items>
+            <v-menu offset-y>
+              <template v-slot:activator="{ on }">
+                <v-btn text v-on="on">
+                  <v-icon left>mdi-account-box</v-icon>Account
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item :to="item.route" :key="item.id" v-for="item in menuitems">
+                  <v-list-item-title>
+                    <v-icon left>{{item.icon}}</v-icon>
+                    {{item.title}}
+                  </v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+          </v-toolbar-items>
+        </v-toolbar>
+
+        <v-form ref="demoform" v-model="valid">
           <v-container>
             <v-row>
-              <v-col cols="12" sm="6">
+              <v-col cols="12">
                 <v-text-field
-                  v-model="firstname"
+                  v-model="username"
                   :rules="nameRules"
-                  :counter="10"
-                  label="First name"
-                  filled
+                  :counter="25"
+                  label="Username"
                   required
+                  filled
+                  clearable
+                ></v-text-field>
+                <v-text-field
+                  v-model="email"
+                  :rules="emailRules"
+                  label="E-mail"
+                  required
+                  filled
+                  clearable
                 ></v-text-field>
 
                 <v-text-field
-                  v-model="lastname"
+                  v-model="password"
                   :rules="nameRules"
-                  :counter="10"
-                  label="Last name"
-                  filled
+                  :counter="25"
+                  label="Password"
+                  type="password"
                   required
+                  filled
+                  clearable
                 ></v-text-field>
-                <v-text-field v-model="email" :rules="emailRules" label="E-mail" filled required></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6">
-                <v-autocomplete filled label="State" :items="states"></v-autocomplete>
               </v-col>
             </v-row>
+            <v-checkbox v-model="rememberme" label="Remember Me"></v-checkbox>
+            <v-btn @click="this.submitForm">Submit</v-btn>
+            <v-btn class="ml-1" @click="this.reSet">Reset Form</v-btn>
           </v-container>
         </v-form>
       </v-card>
@@ -37,16 +71,41 @@
 </template>
 
 <script>
+import uuidv1 from "uuid/v1";
 export default {
   name: "FormsDemo",
+  methods: {
+    reSet() {
+      this.$refs.demoform.reset();
+    },
+    submitForm() {}
+  },
   data() {
     return {
-      valid: true,
-      firstname: "",
-      lastname: "",
+      submitted: false,
+      valid: false,
+      rememberme: false,
+      dialog: false,
+      username: "",
+      email: "",
+      password: "",
+      menuitems: [
+        {
+          id: uuidv1(),
+          title: "Sign Up",
+          icon: "mdi-clipboard-text",
+          route: "#"
+        },
+        {
+          id: uuidv1(),
+          title: "Reset Password",
+          icon: "mdi-lock-reset",
+          route: "#"
+        }
+      ],
       nameRules: [
         v => !!v || "cannot be empty",
-        v => v.length >= 4 || "must be at least 4 characters"
+        v => (v && v.length >= 4) || "must be 4 chars"
       ],
       emailRules: [
         v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || "invalid email address"

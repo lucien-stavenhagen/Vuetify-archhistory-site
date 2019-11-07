@@ -10,23 +10,25 @@
 </template>
 
 <script>
+import uuidv1 from "uuid/v1";
+
 export default {
   name: "Footer",
   data() {
     return {
       links: [
         {
-          id: "1",
+          id: uuidv1(),
           name: "Home",
           route: "/"
         },
         {
-          id: "1",
+          id: uuidv1(),
           name: "About",
           route: "/about"
         },
         {
-          id: "1",
+          id: uuidv1(),
           name: "Hero Demo",
           route: "/herolanding"
         }

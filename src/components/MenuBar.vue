@@ -1,17 +1,19 @@
 <template>
   <nav>
-    <v-app-bar app>
+    <v-app-bar flat app>
+      <img :src="require('../assets/misc/mylogo.png')" height="70px" width="70px" />
       <v-toolbar-title class="text-uppercase">
         <!--       <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
         -->
-        <span class="font-weight-light">Blog</span>
-        <span>App</span>
+        <span class="font-weight-light">Classical Architecture</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <div class="text-center">
+      <v-toolbar-items>
         <v-menu offset-y>
           <template v-slot:activator="{ on }">
-            <v-btn depressed v-on="on">Site Navigation</v-btn>
+            <v-btn text v-on="on">
+              <v-icon left>mdi-longitude</v-icon>Site Navigation
+            </v-btn>
           </template>
           <v-list>
             <v-list-item v-for="item in items" :key="item.id" :to="item.route">
@@ -19,7 +21,7 @@
             </v-list-item>
           </v-list>
         </v-menu>
-      </div>
+      </v-toolbar-items>
     </v-app-bar>
     <!--
     <v-navigation-drawer app v-model="drawer">
@@ -44,6 +46,8 @@
 </template>
 
 <script>
+import uuidv1 from "uuid/v1";
+
 export default {
   name: "MenuBar",
   methods: {},
@@ -52,26 +56,38 @@ export default {
       drawer: false,
       items: [
         {
-          id: "1",
+          id: uuidv1(),
           title: "Home",
           route: "/",
           exact: true,
           icon: "mdi-home"
         },
         {
-          id: "2",
+          id: uuidv1(),
           title: "About",
           route: "/about",
           icon: "mdi-help-box"
         },
         {
-          id: "3",
-          title: "Hero Demo",
-          route: "/herolanding",
+          id: uuidv1(),
+          title: "Ancient Architecture",
+          route: "/ancient",
           icon: "mdi-help-box"
         },
         {
-          id: "4",
+          id: uuidv1(),
+          title: "Greek Architecture",
+          route: "/greek",
+          icon: "mdi-help-box"
+        },
+        {
+          id: uuidv1(),
+          title: "Roman Architecture",
+          route: "/roman",
+          icon: "mdi-help-box"
+        },
+        {
+          id: uuidv1(),
           title: "Forms Demo",
           route: "/formsdemo",
           icon: "mdi-help-box"

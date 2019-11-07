@@ -9,10 +9,6 @@ const routes = [
     component: () => import("../views/Home.vue")
   },
   {
-    path: "/herolanding",
-    component: () => import("../views/HeroLanding.vue")
-  },
-  {
     path: "/formsdemo",
     component: () => import("../components/FormsDemo.vue")
   },
@@ -23,6 +19,18 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
+  },
+  {
+    path: "/ancient",
+    component: () => import("../views/Ancient.vue")
+  },
+  {
+    path: "/roman",
+    component: () => import("../views/Roman.vue")
+  },
+  {
+    path: "/greek",
+    component: () => import("../views/Greek.vue")
   }
 ];
 
