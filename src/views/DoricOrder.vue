@@ -86,7 +86,7 @@ export default {
           ]
         },
         {
-          switched: false,
+          switch: false,
           styled: true,
           title: "The Parthenon I",
           subtitle: "Some views of the Parthenon from a distance.",
@@ -117,7 +117,7 @@ export default {
           ]
         },
         {
-          switched: true,
+          switch: true,
           styled: true,
           title: "The Parthenon II",
           subtitle: "",
@@ -146,6 +146,45 @@ export default {
               source: require("../assets/greek/glorious-parthenon-02.width-800.jpg"),
               caption: `A full-scale, 12-ton replica of the Athena Parthenos looms large at a Parthenon recreation in Nashville. The replica is gilded in gold leaf, but the fifth-century statue was plated in some 2,400 pounds of solid gold.
 © 2008 WGBH Educational Foundation`
+            }
+          ]
+        },
+        {
+          switch: false,
+          styled: true,
+          title:
+            "A modern example from 'Mad' King Ludwig I - the Walhalla, Bavaria, Germany",
+          subtitle: "",
+          text:
+            "From the Wikipedia entry: 'The Walhalla is a hall of fame that honours laudable and distinguished people in German history – politicians, sovereigns, scientists and artists of the German tongue; thus the celebrities honoured are drawn from Greater Germany, a wider area than today's Germany, and even as far away as Britain in the case of several Anglo-Saxons who are honoured. The hall is a neo-classical building above the Danube River, in Donaustauf, east of Regensburg in Bavaria. The Walhalla is named for the Valhalla of Norse Paganism. It was conceived in 1807 by Crown Prince Ludwig in order to support the gathering momentum for the unification of the many German states. Following his accession to the throne of Bavaria, construction took place between 1830 and 1842 under the supervision of the architect Leo von Klenze. The memorial displays some 65 plaques and 130 busts covering 2,000 years of history, beginning with Arminius, victor at the Battle of the Teutoburg Forest in AD 9.",
+          links: [
+            {
+              href: "https://en.wikipedia.org/wiki/Walhalla_memorial",
+              text: "WalHalla on Wikipedia"
+            }
+          ],
+          images: [
+            {
+              source: require("../assets/greek/1080px-Walhalla_Aerial_View.jpg"),
+              caption: `By Gerhard Huber - Own work`,
+              links: [
+                {
+                  href:
+                    "https://commons.wikimedia.org/w/index.php?curid=59561227",
+                  text: "Gerhard Huber, CC BY-SA 3.0"
+                }
+              ]
+            },
+            {
+              source: require("../assets/greek/1000px-Walhalla_Aussen2.jpg"),
+              caption: `By Michael J. Zirbes (Mijozi) - Own work`,
+              links: [
+                {
+                  href:
+                    "https://commons.wikimedia.org/w/index.php?curid=7489307",
+                  text: "Michael J. Zirbes, CC BY 3.0,"
+                }
+              ]
             }
           ]
         }
