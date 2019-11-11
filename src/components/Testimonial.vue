@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <section>
     <v-container>
       <v-row dense>
-        <v-col cols="12" md="4" :key="comment.id" v-for="comment in comments">
+        <v-col cols="12" md="4" :key="i" v-for="(comment, i) in comments">
           <v-hover>
             <template v-slot="{hover}">
               <v-card class="pa-md-3" outlined :elevation="hover ? 24: 0">
@@ -51,33 +51,28 @@
         </v-container>
       </v-col>
     </v-row>
-  </div>
+  </section>
 </template>
 
 <script>
-import uuidv1 from "uuid/v1";
-
 export default {
   name: "Testimonial",
   data() {
     return {
       comments: [
         {
-          id: uuidv1(),
           author: "Andrea Palladio",
           comment: "I never knew web design like this was possible.",
           image: require("../assets/persons/palladio.jpg"),
           gradient: false
         },
         {
-          id: uuidv1(),
           author: "Leon Battista Alberti",
           comment: "Never before have I seen such sites.",
           image: require("../assets/persons/alberti.jpg")
           //         gradient: "to right, rgba(0,255,0,.05), rgba(0,255,0, .05)"
         },
         {
-          id: uuidv1(),
           author: "Le Corbusier",
           comment:
             "When one sees such web pages, what can one say but ... LS designs...",

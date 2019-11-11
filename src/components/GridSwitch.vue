@@ -1,58 +1,61 @@
 <template>
-  <div>
+  <section>
     <v-container>
-      <v-row dense v-for="m in blocks" :key="m.id">
+      <v-row dense v-for="(m,i) in blocks" :key="i">
         <v-col align-self="center" cols="12" md="4" :order-md="m.switch ? 'first' : 'last'">
           <v-card flat :outlined="m.styled" :color="m.styled ? undefined : 'rgba(0,0,0,0)'">
-            <v-card-title class="headline">{{m.title}}</v-card-title>
+            <v-card-title class="display-1">{{m.title}}</v-card-title>
             <v-card-subtitle>{{m.subtitle}}</v-card-subtitle>
             <v-divider v-if="m.styled"></v-divider>
-            <v-card-text>{{m.text}}</v-card-text>
+            <v-card-text class="body-1">{{m.text}}</v-card-text>
+            <v-card-actions class="flex-column" v-if="m.links">
+              <a
+                v-for="(link, i) in m.links"
+                :key="i"
+                target="_blank"
+                :href="link.href"
+              >{{link.text}}</a>
+            </v-card-actions>
           </v-card>
         </v-col>
         <v-col align-self="center" cols="12" md="8" :order-md="m.switch ? 'last' : 'first'">
-          <v-card flat>
-            <v-img :src="m.image"></v-img>
+          <v-card flat outlined v-for="(image, i) in m.images" :key="i">
+            <v-system-bar color="rgba(0,0,0,0)"></v-system-bar>
+            <a :href="image.source" target="_blank">
+              <v-img
+                :max-height="image.maxheight ? image.maxheight : '400px'"
+                contain
+                :src="image.source"
+              ></v-img>
+            </a>
+            <v-card-subtitle class="text-center caption">{{image.caption}}</v-card-subtitle>
+            <v-card-actions class="flex-column" v-if="image.links">
+              <a
+                class="caption"
+                v-for="(link, i) in image.links"
+                :key="i"
+                :href="link.href"
+                target="_blank"
+              >{{link.text}}</a>
+            </v-card-actions>
           </v-card>
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </section>
 </template>
 
 <script>
 // @ is an alias to /src
-import uuidv1 from "uuid/v1";
 export default {
-  name: "WithHero",
-  components: {},
-  data: () => {
-    return {
-      blocks: [
-        {
-          id: uuidv1(),
-          switch: false,
-          styled: true,
-          title: "Join me",
-          subtitle: "And I will complete your training",
-          text:
-            "In sit amet cursus ex, vel vestibulum neque. Duis efficitur ornare tortor in interdum. Donec ut mauris arcu. Quisque sem enim, sollicitudin sed interdum sed, faucibus pulvinar dolor. Morbi sed arcu eu purus semper feugiat at sed arcu. Nulla facilisi. In eleifend semper turpis eu mattis. Morbi congue nulla a lorem iaculis tempor. Nulla vel dui dui. Morbi facilisis, nibh in hendrerit sollicitudin, nisl orci luctus dui, eget vulputate risus nibh et ante. Phasellus tincidunt urna eget imperdiet condimentum. Nulla facilisi. Etiam convallis velit eu pharetra tincidunt. Maecenas vel finibus lectus, sit amet dictum dui. ",
-          image: require("../assets/ancient/catalhoyuk.jpg")
-        },
-        {
-          id: uuidv1(),
-          switch: true,
-          styled: true,
-          title: "Search your feelings",
-          subtitle: "You know it to be true.",
-          text:
-            "Quisque suscipit, nisi in pellentesque ultrices, risus ante venenatis ex, at viverra ipsum libero non orci. Aenean tincidunt lacus vitae felis imperdiet, sed eleifend lorem sollicitudin. Pellentesque eget justo placerat, egestas turpis vitae, blandit tortor. Curabitur eu massa dictum mauris finibus luctus ac eu mauris. Suspendisse tempus ante eget lectus sodales dictum. Pellentesque a leo lacinia, commodo elit vitae, pharetra urna. Proin id orci pellentesque, scelerisque mi at, malesuada urna. Sed eu tortor ultricies, luctus ante a, ultricies diam. Suspendisse at turpis ultrices, ullamcorper ex ut, euismod mauris. Proin rhoncus semper metus et pellentesque. Morbi sem quam, ornare quis quam sed, iaculis lacinia dui. Donec lacinia augue massa, non placerat arcu vulputate id. Praesent blandit tincidunt eros sit amet varius. ",
-          image: require("../assets/greek/Hephaistos_temple_2006.jpg")
-        }
-      ]
-    };
-  }
+  name: "GridSwitch",
+  props: ["blocks"],
+  components: {}
 };
 </script>
 <style scoped>
+.v-card__text,
+.v-card__title {
+  word-break: normal; /* maybe !important  */
+}
 </style>

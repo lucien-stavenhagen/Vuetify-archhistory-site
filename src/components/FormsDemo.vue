@@ -78,7 +78,11 @@ export default {
     reSet() {
       this.$refs.demoform.reset();
     },
-    submitForm() {}
+    submitForm() {
+      if (this.valid) {
+        alert(this.username);
+      }
+    }
   },
   data() {
     return {

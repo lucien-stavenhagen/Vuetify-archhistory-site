@@ -25,12 +25,12 @@ const routes = [
     component: () => import("../views/Ancient.vue")
   },
   {
-    path: "/roman",
-    component: () => import("../views/Roman.vue")
+    path: "/doricorder",
+    component: () => import("../views/DoricOrder.vue")
   },
   {
-    path: "/greek",
-    component: () => import("../views/Greek.vue")
+    path: "/greekorders",
+    component: () => import("../views/GreekOrders.vue")
   }
 ];
 

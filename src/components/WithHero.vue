@@ -1,17 +1,15 @@
 <template>
-  <div>
-    <div class="home">
-      <v-container>
-        <v-row dense v-for="m in blocks" :key="m.id">
-          <v-col :md="colsize" :offset-md="m.switch ? 0 : 12-colsize">
-            <v-card outlined dark color="rgba(0,0,0,0)">
-              <v-card-title class="headline">{{m.title}}</v-card-title>
-              <v-card-subtitle>{{m.subtitle}}</v-card-subtitle>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
-    </div>
+  <div class="home">
+    <v-container>
+      <v-row dense v-for="m in blocks" :key="m.id">
+        <v-col :md="colsize" :offset-md="m.switch ? 0 : 12-colsize">
+          <v-card outlined dark color="rgba(0,0,0,0)">
+            <v-card-title class="headline">{{m.title}}</v-card-title>
+            <v-card-subtitle>{{m.subtitle}}</v-card-subtitle>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -61,10 +59,11 @@ export default {
   bottom: 0;
   right: 0;
   opacity: 1;
-  z-index: -2;
+  z-index: -30;
   background: url("../assets/roman/willian-west-YpKiwlvhOpI-unsplash.jpg")
     no-repeat center center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .home::after {
@@ -76,7 +75,7 @@ export default {
   bottom: 0;
   right: 0;
   opacity: 0.5;
-  z-index: -1;
+  z-index: -20;
   background-color: black;
 }
 </style>

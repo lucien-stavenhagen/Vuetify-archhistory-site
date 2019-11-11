@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <section class="home">
     <v-carousel hide-delimiters>
-      <v-carousel-item transition="fade-transition" v-for="item in items" :key="item.id">
+      <v-carousel-item transition="fade-transition" v-for="(item, i) in items" :key="i">
         <v-sheet :color="item.color" height="100%" tile>
           <v-row class="fill-height" align="center" justify="center">
             <v-card class="pa-6" :to="item.to" outlined flat>
@@ -12,18 +12,15 @@
         </v-sheet>
       </v-carousel-item>
     </v-carousel>
-  </div>
+  </section>
 </template>
   <script>
-import uuidv1 from "uuid/v1";
-
 export default {
   name: "HomeCarousel",
   data() {
     return {
       items: [
         {
-          id: uuidv1(),
           color: "rgba(255,0,0, .08",
           to: "/ancient",
           caption: {
@@ -32,21 +29,20 @@ export default {
           }
         },
         {
-          id: uuidv1(),
-          to: "/greek",
+          to: "/greekorders",
           color: "rgba(0,255,0, .08",
           caption: {
-            title: "Greek",
-            description: "Temple of Hephaistos"
+            title: "The Greek Orders",
+            description:
+              "A summary of the three main orders of ancient Greek Architecture"
           }
         },
         {
-          id: uuidv1(),
-          to: "/roman",
+          to: "/doricorder",
           color: "rgba(0,0,255, .08",
           caption: {
-            title: "Roman",
-            description: "Flavian Ampitheater, Rome"
+            title: "The Doric Order",
+            description: "Examples of the Doric order"
           }
         }
       ]

@@ -1,14 +1,19 @@
 <template>
   <nav>
     <v-app-bar flat app>
+      <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
       <img :src="require('../assets/misc/mylogo.png')" height="70px" width="70px" />
       <v-toolbar-title class="text-uppercase">
-        <!--       <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
-        -->
-        <span class="font-weight-light">Classical Architecture</span>
+        <span class="font-weight-light">LS Designs</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items>
+      <v-tooltip bottom>
+        <template v-slot:activator="{on}">
+          <v-icon v-on="on" @click="toggleTheme">mdi-light-switch</v-icon>
+        </template>
+        <span>Toggle Dark</span>
+      </v-tooltip>
+      <!--      <v-toolbar-items>
         <v-menu offset-y>
           <template v-slot:activator="{ on }">
             <v-btn text v-on="on">
@@ -16,19 +21,21 @@
             </v-btn>
           </template>
           <v-list>
-            <v-list-item v-for="item in items" :key="item.id" :to="item.route">
+            <v-list-item v-for="(item, i) in items" :key="i" :to="item.route">
               <v-list-item-title>{{ item.title }}</v-list-item-title>
             </v-list-item>
           </v-list>
         </v-menu>
       </v-toolbar-items>
     </v-app-bar>
-    <!--
-    <v-navigation-drawer app v-model="drawer">
+      -->
+    </v-app-bar>
+
+    <v-navigation-drawer app disable-resize-watcher v-model="drawer">
       <v-list>
         <v-list-item
-          v-bind:key="item.id"
-          v-for="item in items"
+          v-bind:key="i"
+          v-for="(item, i) in items"
           :exact="item.exact ? true : false"
           :to="item.route"
         >
@@ -40,54 +47,50 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <v-btn @click="drawer = false">Close Drawer</v-btn>
     </v-navigation-drawer>
-    -->
   </nav>
 </template>
 
 <script>
-import uuidv1 from "uuid/v1";
-
 export default {
   name: "MenuBar",
-  methods: {},
+  methods: {
+    toggleTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+    }
+  },
   data() {
     return {
       drawer: false,
       items: [
         {
-          id: uuidv1(),
           title: "Home",
           route: "/",
           exact: true,
           icon: "mdi-home"
         },
         {
-          id: uuidv1(),
           title: "About",
           route: "/about",
-          icon: "mdi-help-box"
+          icon: "mdi-account"
         },
         {
-          id: uuidv1(),
           title: "Ancient Architecture",
           route: "/ancient",
-          icon: "mdi-help-box"
+          icon: "mdi-beehive-outline"
         },
         {
-          id: uuidv1(),
-          title: "Greek Architecture",
-          route: "/greek",
-          icon: "mdi-help-box"
+          title: "The Orders",
+          route: "/greekorders",
+          icon: "mdi-bank-outline"
         },
         {
-          id: uuidv1(),
-          title: "Roman Architecture",
-          route: "/roman",
-          icon: "mdi-help-box"
+          title: "Doric",
+          route: "/doricorder",
+          icon: "mdi-bank-outline"
         },
         {
-          id: uuidv1(),
           title: "Forms Demo",
           route: "/formsdemo",
           icon: "mdi-help-box"
