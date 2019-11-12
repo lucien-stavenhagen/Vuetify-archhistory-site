@@ -73,14 +73,20 @@
 <script>
 import uuidv1 from "uuid/v1";
 export default {
-  name: "FormsDemo",
+  name: "LogIn",
   methods: {
     reSet() {
       this.$refs.demoform.reset();
     },
     submitForm() {
       if (this.valid) {
-        alert(this.username);
+        const text = `
+        Username: ${this.username}
+        Email: ${this.email}
+        Remember me: ${this.rememberme}`;
+        alert(text);
+      } else {
+        alert("Form validation failed!");
       }
     }
   },

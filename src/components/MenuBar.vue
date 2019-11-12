@@ -91,9 +91,9 @@ export default {
           icon: "mdi-bank-outline"
         },
         {
-          title: "Forms Demo",
-          route: "/formsdemo",
-          icon: "mdi-help-box"
+          title: "Login",
+          route: "/login",
+          icon: "mdi-login"
         }
       ]
     };
