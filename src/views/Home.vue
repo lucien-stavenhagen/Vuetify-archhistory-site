@@ -8,12 +8,12 @@
           dark
           min-height="400px"
           :color="content.color"
-          class="my-3 d-flex flex-column align-center justify-center"
+          class="my-3 pa-5 d-flex flex-column align-center justify-center"
         >
           <v-card-title class="display-1">{{content.title}}</v-card-title>
           <v-card-text>{{content.text}}</v-card-text>
           <v-card-actions>
-            <v-btn :to="content.route">Read More...</v-btn>
+            <v-btn class="ma-4" :to="content.route">Read More...</v-btn>
           </v-card-actions>
         </v-card>
       </section>

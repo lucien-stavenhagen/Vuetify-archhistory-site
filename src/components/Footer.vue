@@ -1,5 +1,8 @@
 <template>
   <v-footer app inset absolute>
+    <v-row justify="center">
+      <v-btn text :to="link.route" :key="i" v-for="(link,i) in links">{{link.name}}</v-btn>
+    </v-row>
     <v-col cols="12" class="text-center">
       {{ new Date().getFullYear() }} —
       <strong>Vuetify</strong>
@@ -8,27 +11,22 @@
 </template>
 
 <script>
-import uuidv1 from "uuid/v1";
-
 export default {
   name: "Footer",
   data() {
     return {
       links: [
         {
-          id: uuidv1(),
           name: "Home",
           route: "/"
         },
         {
-          id: uuidv1(),
-          name: "About",
-          route: "/about"
+          name: "Orders",
+          route: "/greekorders"
         },
         {
-          id: uuidv1(),
-          name: "Hero Demo",
-          route: "/herolanding"
+          name: "Login",
+          route: "/login"
         }
       ]
     };

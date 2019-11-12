@@ -31,7 +31,7 @@
     <v-row>
       <v-col align-self="center" cols="12">
         <v-container>
-          <v-card flat>
+          <v-card flat class="pa-5">
             <v-card-title class="headline justify-center">And there is so much more...</v-card-title>
             <v-card-subtitle
               class="text-center"
