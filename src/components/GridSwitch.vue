@@ -8,7 +8,7 @@
             <v-card-subtitle>{{m.subtitle}}</v-card-subtitle>
             <v-divider v-if="m.styled"></v-divider>
             <v-card-text class="body-1">{{m.text}}</v-card-text>
-            <v-card-actions class="flex-column" v-if="m.links">
+            <v-card-actions class="flex-column" v-if="m.links && m.links.length > 0">
               <a
                 v-for="(link, i) in m.links"
                 :key="i"
@@ -23,13 +23,13 @@
             <v-system-bar color="rgba(0,0,0,0)"></v-system-bar>
             <a :href="image.source" target="_blank">
               <v-img
-                :max-height="image.maxheight ? image.maxheight : '400px'"
+                :max-height="image.maxheight ? image.maxheight : '500px'"
                 contain
                 :src="image.source"
               ></v-img>
             </a>
             <v-card-subtitle class="text-center caption">{{image.caption}}</v-card-subtitle>
-            <v-card-actions class="flex-column" v-if="image.links">
+            <v-card-actions class="flex-column" v-if="image.links && image.links.length > 0">
               <a
                 class="caption"
                 v-for="(link, i) in image.links"

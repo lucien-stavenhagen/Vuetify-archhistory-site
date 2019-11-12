@@ -12,6 +12,9 @@
         >
           <v-card-title class="display-1">{{content.title}}</v-card-title>
           <v-card-text>{{content.text}}</v-card-text>
+          <v-card-actions>
+            <v-btn :to="content.route">Read More...</v-btn>
+          </v-card-actions>
         </v-card>
       </section>
     </v-container>
@@ -36,22 +39,25 @@ export default {
     return {
       contents: [
         {
-          title: "Ancient Architecture section",
-          text:
-            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus temporibus repellat aspernatur tenetur blanditiis libero provident, reprehenderit modi vero suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus temporibus repellat aspernatur tenetur blanditiis libero provident, reprehenderit modi vero suscipit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus temporibus repellat aspernatur tenetur blanditiis libero provident, reprehenderit modi vero suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus temporibus repellat aspernatur tenetur blanditiis libero provident, reprehenderit modi vero suscipit.",
-          color: "brown darken-2"
-        },
-        {
-          title: "Greek Architecture section",
+          title: "The Ionic Order",
           text: `Λορεμ ιπσθμ δολορ σιτ αμετ, περφεcτο σιγνιφερθμqθε ατ εαμ, νε vισ μθcιθσ οπορτερε, μαζιμ vοcιβθσ δοcενδι εθ πρι. Περ σεμπερ αλιqθιδ ιν. Cθμ μθτατ ελεcτραμ αδvερσαριθμ αν, αν μολλισ σαλθτανδι θσθ. Vολθπτθα ινδοcτθμ cονσετετθρ qθι ετ.
             Δθο ετ jθστο βονορθμ, ιδ ερρορ δεσερθντ δισσεντιετ σεα. Vελ ει αccθμσαν ρεcτεqθε ρεπθδιαρε. Jθστο cονστιτθτο νο περ, ομνεσqθε ιντελλεγαμ δισσεντιθντ qθι εθ, σεα vερο λαορεετ ιν. Νεc τε vιδε μθνερε, πριμισ vερεαρ σθσcιπιτ νεc εθ, εθ εστ θτροqθε μενανδρι μαιεστατισ.`,
-          color: "teal darken-4"
+          color: "teal darken-4",
+          route: "/ionicorder"
         },
         {
-          title: "Roman Architecture Section",
+          title: "The Corinthian Order",
+          text:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus temporibus repellat aspernatur tenetur blanditiis libero provident, reprehenderit modi vero suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus temporibus repellat aspernatur tenetur blanditiis libero provident, reprehenderit modi vero suscipit.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus temporibus repellat aspernatur tenetur blanditiis libero provident, reprehenderit modi vero suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus temporibus repellat aspernatur tenetur blanditiis libero provident, reprehenderit modi vero suscipit.",
+          color: "brown darken-2",
+          route: "/corinthianorder"
+        },
+        {
+          title: "The Doric Order",
           text:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus temporibus repellat aspernatur tenetur blanditiis libero provident, reprehenderit modi vero suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus temporibus repellat aspernatur tenetur blanditiis libero provident, reprehenderit modi vero suscipit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus temporibus repellat aspernatur tenetur blanditiis libero provident, reprehenderit modi vero suscipit.",
-          color: "blue darken-4"
+          color: "blue darken-4",
+          route: "/doricorder"
         }
       ]
     };

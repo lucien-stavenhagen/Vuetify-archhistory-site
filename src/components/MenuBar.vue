@@ -71,18 +71,18 @@ export default {
           icon: "mdi-home"
         },
         {
-          title: "About",
-          route: "/about",
-          icon: "mdi-account"
-        },
-        {
-          title: "Ancient Architecture",
-          route: "/ancient",
-          icon: "mdi-beehive-outline"
-        },
-        {
           title: "The Orders",
           route: "/greekorders",
+          icon: "mdi-bank-outline"
+        },
+        {
+          title: "Corinthian",
+          route: "/corinthianorder",
+          icon: "mdi-bank-outline"
+        },
+        {
+          title: "Ionic",
+          route: "/ionicorder",
           icon: "mdi-bank-outline"
         },
         {

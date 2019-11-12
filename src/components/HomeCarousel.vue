@@ -21,14 +21,6 @@ export default {
     return {
       items: [
         {
-          color: "rgba(255,0,0, .08",
-          to: "/ancient",
-          caption: {
-            title: "Ancient",
-            description: "Excavation at Catal Hoyuk, Turkey"
-          }
-        },
-        {
           to: "/greekorders",
           color: "rgba(0,255,0, .08",
           caption: {
@@ -43,6 +35,22 @@ export default {
           caption: {
             title: "The Doric Order",
             description: "Examples of the Doric order"
+          }
+        },
+        {
+          color: "rgba(255,0,0, .08",
+          to: "/ionicorder",
+          caption: {
+            title: "The Ionic Order",
+            description: "Examples of the Ionic order from Greece and Rome."
+          }
+        },
+        {
+          to: "/corinthianorder",
+          color: "rgba(255,0,255, .08",
+          caption: {
+            title: "The Corinthian Order",
+            description: "Examples of the Corinthian order"
           }
         }
       ]
