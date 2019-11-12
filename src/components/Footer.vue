@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <v-footer app inset absolute>
-      <v-col cols="12" class="text-center">
-        {{ new Date().getFullYear() }} —
-        <strong>Vuetify</strong>
-      </v-col>
-    </v-footer>
-  </div>
+  <v-footer app inset absolute>
+    <v-col cols="12" class="text-center">
+      {{ new Date().getFullYear() }} —
+      <strong>Vuetify</strong>
+    </v-col>
+  </v-footer>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <section class="home">
     <v-container>
       <v-row dense v-for="(m,i) in blocks.blocks" :key="i">
         <v-col :md="blocks.colsize" :offset-md="m.switch ? 0 : 12-blocks.colsize">
@@ -11,7 +11,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </section>
 </template>
 
 <script>

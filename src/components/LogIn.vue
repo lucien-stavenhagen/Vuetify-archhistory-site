@@ -15,7 +15,7 @@
                 </v-btn>
               </template>
               <v-list>
-                <v-list-item :to="item.route" :key="item.id" v-for="item in menuitems">
+                <v-list-item :to="item.route" :key="i" v-for="(item, i) in menuitems">
                   <v-list-item-title>
                     <v-icon left>{{item.icon}}</v-icon>
                     {{item.title}}
@@ -71,7 +71,6 @@
 </template>
 
 <script>
-import uuidv1 from "uuid/v1";
 export default {
   name: "LogIn",
   methods: {
@@ -101,16 +100,14 @@ export default {
       password: "",
       menuitems: [
         {
-          id: uuidv1(),
-          title: "Sign Up",
+          title: "Home",
           icon: "mdi-clipboard-text",
-          route: "#"
+          route: "/"
         },
         {
-          id: uuidv1(),
-          title: "Reset Password",
-          icon: "mdi-lock-reset",
-          route: "#"
+          title: "Orders Home",
+          icon: "mdi-bank",
+          route: "/greekorders"
         }
       ],
       nameRules: [
