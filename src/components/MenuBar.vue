@@ -13,22 +13,6 @@
         </template>
         <span>Toggle Dark</span>
       </v-tooltip>
-      <!--      <v-toolbar-items>
-        <v-menu offset-y>
-          <template v-slot:activator="{ on }">
-            <v-btn text v-on="on">
-              <v-icon left>mdi-longitude</v-icon>Site Navigation
-            </v-btn>
-          </template>
-          <v-list>
-            <v-list-item v-for="(item, i) in items" :key="i" :to="item.route">
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item>
-          </v-list>
-        </v-menu>
-      </v-toolbar-items>
-    </v-app-bar>
-      -->
     </v-app-bar>
 
     <v-navigation-drawer app disable-resize-watcher v-model="drawer">

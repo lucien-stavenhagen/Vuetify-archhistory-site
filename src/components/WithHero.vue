@@ -1,11 +1,12 @@
 <template>
   <div class="home">
     <v-container>
-      <v-row dense v-for="m in blocks" :key="m.id">
-        <v-col :md="colsize" :offset-md="m.switch ? 0 : 12-colsize">
+      <v-row dense v-for="(m,i) in blocks.blocks" :key="i">
+        <v-col :md="blocks.colsize" :offset-md="m.switch ? 0 : 12-blocks.colsize">
           <v-card outlined dark color="rgba(0,0,0,0)">
-            <v-card-title class="headline">{{m.title}}</v-card-title>
+            <v-card-title class="display-2">{{m.title}}</v-card-title>
             <v-card-subtitle>{{m.subtitle}}</v-card-subtitle>
+            <v-card-text class="headline font-weight-light">{{m.text}}</v-card-text>
           </v-card>
         </v-col>
       </v-row>
@@ -15,32 +16,16 @@
 
 <script>
 // @ is an alias to /src
-import uuidv1 from "uuid/v1";
 
 export default {
   name: "WithHero",
-  components: {},
-  data() {
-    return {
-      colsize: "4",
-      blocks: [
-        {
-          id: uuidv1(),
-          switch: true,
-          title: "There is no escape.",
-          subtitle:
-            "Don't make me destroy you. Luke, you do not yet realize your importance. You have only begun to discover your power. Join me, and I will complete your training. With our combined strength, we can end this destructive conflict and bring order to the galaxy."
-        },
-        {
-          id: uuidv1(),
-          switch: false,
-          title: "If you only knew...",
-          subtitle:
-            "...the power of the Dark Side. ObiWan never told you what happened to your father... No... I am your father. Search your feelings, you know it to be true. Join me, and we can rule the galaxy as father and son! Come with me, it is the only way"
-        }
-      ]
-    };
-  }
+  props: {
+    blocks: {
+      type: Object,
+      required: true
+    }
+  },
+  components: {}
 };
 </script>
 <style scoped>
