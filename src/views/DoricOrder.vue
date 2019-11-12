@@ -9,7 +9,7 @@
         >The Doric Order is represented by many fine examples still standing today. In this section, the primary examples will be the Temple of Hephasistus in Athens, the Temple of Hera I and II at Paestum, the Parthenon which should need no introduction, and a modern example, the WalHalla in Bavaria, Germany.</v-card-text>
       </v-card>
     </v-container>
-    <GridSwitch :blocks="blocks" />
+    <GridSwitch :blocks="this.blocks" />
   </section>
 </template>
 <script>

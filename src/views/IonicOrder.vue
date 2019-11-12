@@ -9,7 +9,7 @@
         >The Ionic Order will be represented here by images of the Erechtheion, including the Porch of the Caryatides and a well-preserved example from Roman architecture.</v-card-text>
       </v-card>
     </v-container>
-    <GridSwitch :blocks="blocks" />
+    <GridSwitch :blocks="this.blocks" />
   </section>
 </template>
 <script>

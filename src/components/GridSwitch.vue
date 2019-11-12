@@ -49,7 +49,12 @@
 // @ is an alias to /src
 export default {
   name: "GridSwitch",
-  props: ["blocks"],
+  props: {
+    blocks: {
+      type: Array,
+      required: true
+    }
+  },
   components: {}
 };
 </script>

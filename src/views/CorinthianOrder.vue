@@ -9,7 +9,7 @@
         >The Corinthian Order examples here will primarily come from the Pantheon in Rome and the Olympieion (Temple of Olympian Zeus) in Athens. A shot of the ceiling at the Karnak Temple complex in Egypt is included also, to show an example of the probable precursor to the Corinthian order.</v-card-text>
       </v-card>
     </v-container>
-    <GridSwitch :blocks="blocks" />
+    <GridSwitch :blocks="this.blocks" />
   </section>
 </template>
 <script>

@@ -4,7 +4,7 @@
       <v-carousel-item transition="fade-transition" v-for="(item, i) in items" :key="i">
         <v-sheet :color="item.color" height="100%" tile>
           <v-row class="fill-height" align="center" justify="center">
-            <v-card class="pa-6" :to="item.to" outlined flat>
+            <v-card color="rgba(0,0,0, .7)" class="pa-6" :to="item.to" outlined flat>
               <v-card-title class="display-3 justify-center">{{item.caption.title}}</v-card-title>
               <v-card-text class="text-center">{{item.caption.description}}</v-card-text>
             </v-card>
