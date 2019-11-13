@@ -63,4 +63,8 @@ export default {
   z-index: -20;
   background-color: black;
 }
+.v-card__text,
+.v-card__title {
+  word-break: normal; /* maybe !important  */
+}
 </style>

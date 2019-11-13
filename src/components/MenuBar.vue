@@ -2,8 +2,14 @@
   <nav>
     <v-app-bar flat app>
       <v-app-bar-nav-icon @click="drawer=!drawer"></v-app-bar-nav-icon>
-      <img :src="require('../assets/misc/mylogo.png')" height="70px" width="70px" />
-      <v-toolbar-title class="text-uppercase">
+      <img
+        id="clickmeimg"
+        @click="goHome"
+        :src="require('../assets/misc/mylogo.png')"
+        height="70px"
+        width="70px"
+      />
+      <v-toolbar-title id="clickmetitle" @click="goHome" class="text-uppercase">
         <span class="font-weight-light">LS Designs</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -42,6 +48,9 @@ export default {
   methods: {
     toggleTheme() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+    },
+    goHome() {
+      this.$router.push("/");
     }
   },
   data() {
@@ -86,4 +95,8 @@ export default {
 </script>
 
 <style scoped>
+#clickmetitle:hover,
+#clickmeimg:hover {
+  cursor: pointer;
+}
 </style>

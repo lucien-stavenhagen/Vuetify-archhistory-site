@@ -1,7 +1,7 @@
 <template>
   <section class="home">
     <v-carousel hide-delimiters>
-      <v-carousel-item transition="fade-transition" v-for="(item, i) in items" :key="i">
+      <v-carousel-item v-for="(item, i) in items" :key="i">
         <v-sheet :color="item.color" height="100%" tile>
           <v-row class="fill-height" align="center" justify="center">
             <v-card color="rgba(0,0,0, .7)" class="pa-6" :to="item.to" outlined flat>
